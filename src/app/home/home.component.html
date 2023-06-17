@@ -1,0 +1,45 @@
+<div class="main">
+<div *ngIf="authLoading || configLoading">Loading...</div>
+<div *ngIf="!authLoading && !configLoading" class="main">
+  <div class="inner-div">
+    <div class="header">
+      <h1 class="title">Who's <span class="flashy">Who</span></h1>
+      <h5 class="disclaimer">(The Spotify guessing game)</h5>
+      <p class="intro">Hello new player! Welcome to Who's Who, the Spotify guessing game!</p>
+      <p class="intro">To get started please first choose how many artists you would like in the pool of artists to
+        choose from. (Example: if you choose 2 then only 2 artists will be displayed in the game as choices)</p>
+      <p class="intro">Second please choose the amount of preview tracks to play as your hint. (Example: if you choose 3
+        then you will be provided 3 sample songs to listen to to give you more chances to guess the correct artist)</p>
+      <p class="intro">Finally please choose the genre of music you would like test yourself on.</p>
+    </div>
+    <div class="body">
+      <h4 class="select-label">Number of artists to choose from:</h4>
+      <select [ngModel]="numArtistsChosen" (ngModelChange)="setNumArtists($event)" class="dropdown">
+        <option [value]="null" disabled>How many artists?</option>
+        <option [value]="num" *ngFor="let num of numSelectionArtists">
+          {{ num }}
+        </option>
+      </select>
+      <h4 class="select-label">Number of songs to preview:</h4>
+      <select [ngModel]="numTracksChosen" (ngModelChange)="setNumTracks($event)" class="dropdown">
+        <option [value]="null" disabled>How many songs?</option>
+        <option [value]="num" *ngFor="let num of numSelectionSongs">
+          {{ num }}
+        </option>
+      </select>
+      <h4 class="select-label">What genre would you like to test yourself on?:</h4>
+      <select [(ngModel)]="temp" (ngModelChange)="setGenre($event)" class="dropdown">
+        <!-- need to try and get default "select genre to display in option" -->
+        <option [ngValue]="undefined" disabled selected>Select Genre</option>
+        <option [ngValue]="genre" *ngFor="let genre of genres">
+          {{ genre }}
+        </option>
+      </select>
+      <div *ngIf="error" class="error">{{ error }}</div>
+      <div *ngIf="tracksLoading === true" class="loading">Generating Game...</div>
+      <div class="button-div" *ngIf="tracksLoading === false">
+        <button class="start" (click)="onSubmit()">Start Game</button>
+      </div>
+    </div>
+  </div>
+</div>

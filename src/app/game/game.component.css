@@ -1,0 +1,316 @@
+.main,
+.head,
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.head,
+.main,
+.selection-container,
+.artist-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.song-item {
+  color: #4704c4;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px; /* Add some spacing between song items */
+}
+
+.song-item button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding: 0;
+  background: none;
+  color: #4704c4;
+  border: none;
+  cursor: pointer;
+}
+
+.song-item button .play-icon {
+  margin-right: 15px; /* Adjust the spacing between the play icon and the track number */
+}
+
+.song-item button span {
+  font-size: 18px; /* Decrease the font size of the track number */
+  color: #fff;
+}
+
+.gameBtn {
+  height: 40px;
+  width: 140px;
+  background-color: #4704c4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.gameBtn:hover {
+  background-color: #5205e3;
+}
+
+
+.song-item button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding: 0;
+  background: none;
+  color: #4704c4;
+  border: none;
+  cursor: pointer;
+}
+
+.song-item button .play-icon {
+  margin-right: 5px; /* Adjust the spacing between the play icon and the track number */
+}
+
+.song-item button span {
+  font-size: 18px; /* Decrease the font size of the track number */
+}
+
+.gameBtn {
+  height: 40px;
+  width: 140px;
+  background-color: #4704c4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.gameBtn:hover {
+  background-color: #5205e3;
+}
+
+
+
+
+
+
+
+
+
+.radio-btns {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: flex-start;
+  text-align: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.main,
+.head,
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3,
+p,
+.artist-name {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+button {
+  padding: 0;
+  background: none;
+  color: #4704c4;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.gameBtn {
+  height: 40px;
+  width: 140px;
+  background-color: #4704c4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.gameBtn:hover {
+  background-color: #5205e3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.artist-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.artist-image:focus {
+  box-shadow: 0 0 4px white;
+}
+
+.song-item,
+.artist-card {
+  margin-bottom: 20px;
+}
+
+.selection-container {
+  border: 1px solid #8e62df;
+  padding: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 4px #8e62df;
+}
+
+.play {
+  width: 150px;
+  height: 50px;
+  background-color: none;
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex; /* Add flex display to align items */
+  justify-content: center; /* Horizontally center the icon */
+  gap: 10px;
+  align-items: center; /* Vertically center the icon */
+  /* color: #4704c4; Set the color for the icon */
+  font-size: 24px; /* Adjust the font size of the icon */
+  box-shadow: 0 0 4px #9360f2;
+  border: 1px solid #8e62df;
+  border-radius: 10px;
+}
+
+.play:active {
+  box-shadow: none;
+}
+
+.artist-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap to the next line */
+  justify-content: center; /* Horizontally center the images */
+  align-items: center; /* Vertically center the images */
+  margin-top: 20px; /* Add some top margin */
+}
+
+.artist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  margin: 10px; /* Add some margin around each card */
+}
+
+.winner {
+  font-weight: 500;
+  color: green;
+}
+
+.loser{
+  font-weight: 500;
+  color: red;
+}
+
+.playAgain {
+  height: 40px;
+  width: 140px;
+  background-color: #4704c4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.playAgainBtn {
+  margin-left: 32%;
+}
+
+.tracks-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-play {
+  text-shadow: -3px 5px rgba(255, 255, 255, 0.681), 0 0 2px white;
+  /* text-shadow: 0 0 3px white; */
+}
+
+.fa-play:hover {
+  color: #5205e3;
+}
+
+.artist-button {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+
+.selection-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 160px;
+}
+
+.artist-button:focus {
+  box-shadow: 0 0 18px white;
+}

@@ -1,0 +1,54 @@
+<div class="main">
+  <div class="head">
+    <div *ngIf="!gameOver">
+      <h2>Guess the Artist</h2>
+      <p class="instructions">Guess the correct artist by listening to the following tracks!</p>
+      <div class="artist-info"></div>
+      <div class="tracks-div">
+        <div class="song-item" *ngFor="let song of songs">
+          <button class="play" (click)="togglePlayStop(song)">
+            <i class="fas fa-play"></i>
+            <span> Track {{ songs.indexOf(song) + 1 }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Artist selection -->
+  <div *ngIf="!gameOver" class="selection-container">
+    <h2>Select the correct artist:</h2>
+    <h4 *ngIf="!gameOver && isStillPlaying" class="still-playing-title">That was an incorrect selection, You still have
+      {{ numGuesses }} guess left</h4>
+    <div class="radio-btns">
+      <div *ngFor="let artist of artists" class="artist-selection">
+        <div class="selection-wrapper">
+          <button class="artist-button" (click)="onArtistSelected(artist)">
+            <img [src]="artist.image" alt="Artist Image" class="artist-image">
+          </button>
+          <h4 class="artist-name">{{ artist.name }}</h4>
+        </div>
+        <!-- <input type="radio" name="selectedArtist" [value]="artist.name" (change)="onArtistSelected(artist)">
+        <label>{{ artist.name }}</label> -->
+      </div>
+    </div>
+    <button class="gameBtn" (click)="checkAnswer()">Submit</button>
+  </div>
+
+  <!-- Display the artist pictures and names -->
+  <div *ngIf="gameOver" class="artist-container">
+    <div *ngFor="let artist of artists" class="artist-card">
+      <img [src]="artist.image" alt="Artist Image" class="artist-image">
+      <h4 class="artist-name">{{ artist.name }}</h4>
+    </div>
+  </div>
+
+
+  <div class="winOrLose">
+    <div *ngIf="gameOver">
+      <h2 class="winner" *ngIf="isWinner">Congratulations, you win!</h2>
+      <h2 class="loser" *ngIf="!isWinner">Oops, wrong guess. Try again!</h2>
+      <div class="playAgainBtn"> <button class="playAgain" (click)="restartGame()">Play Again</button></div>
+    </div>
+  </div>
+</div>
